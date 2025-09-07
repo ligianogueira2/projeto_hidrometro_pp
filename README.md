@@ -144,10 +144,12 @@
     <li><b>Testes de Integração:</b> A interação entre a Controladora e as outras classes foi testada para assegurar que o fluxo da simulação ocorresse como o esperado. Por exemplo, verificou-se se a Controladora estava passando a vazão correta para o Hidrometro e se o Hidrometro, por sua vez, estava enviando o volume atualizado para o Display em cada ciclo.</li>
 </ul> 
 
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
 <h2 id="creditos"> &#11088 CRÉDITOS</h2>
 
-<li>Estudante/desenvolvedora</li>
+<li>Estudante/desenvolvedora:</li>
 <p><a href="http://lattes.cnpq.br/2405746986360435">Anna Lígia Alves Nogueira</a></p>
 
-<li>Professor responsável</li>
+<li>Professor responsável:</li>
 <p><a href="http://lattes.cnpq.br/1246085373474860">Katyusco de Farias Santos</a></p>
