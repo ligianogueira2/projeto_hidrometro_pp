@@ -75,11 +75,10 @@
 <p>O diagrama destaca o relacionamento de Composição, onde a classe Controladora atua como a orquestradora central, possuindo e gerenciando instâncias das classes Entrada, Hidrometro e Display para executar a simulação de ponta a ponta</p>
 
 <ul>
-  <li> Entrada: Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
-  <li> Hidrômetro: A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
-  <li> Display: Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
-  <li> Controladora: O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo; </li>
-  <li> Display: Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas.</li>
+  <li> <b>Entrada:</b> Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
+  <li> <b>Hidrômetro:</b> A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
+  <li> <b>Display::</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
+  <li> <b>Controladora:</b> O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
 </ul>
 
 <p align="center"> 
@@ -92,11 +91,11 @@
 
 <h4>➔ Arquitetura de diretórios:</h4>
 <ul>
-    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/src"><b>src/</b>:</a>Contém os arquivos de implementação (.cpp) de todas as classes do projeto e a função principal (main), que inicializa a Controladora e inicia a simulação. </li>
-    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/include"><b>include/</b>:</a>Armazena os arquivos de cabeçalho (.h) de todas as classes, que definem a interface (métodos e atributos) do nosso modelo de hidrômetro. </li>
-    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>config/</b>:</a>Contém o arquivo parametros.txt, usado para configurar a simulação (vazão e pressão). </li>
-    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/README.md"><b>README.md</b>:</a>Este arquivo, que fornece uma visão geral do projeto, sua arquitetura, as ferramentas utilizadas e as instruções para a compilação. </li>
-    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>.gitignore</b>:</a>Arquivo de configuração do Git que define quais arquivos e pastas devem ser ignorados (por exemplo, arquivos executáveis e de compilação). </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/src"><b>src/</b>:</a> Contém os arquivos de implementação (.cpp) de todas as classes do projeto e a função principal (main), que inicializa a Controladora e inicia a simulação. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/include"><b>include/</b>:</a> Armazena os arquivos de cabeçalho (.h) de todas as classes, que definem a interface (métodos e atributos) do nosso modelo de hidrômetro. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>config/</b>:</a> Contém o arquivo parametros.txt, usado para configurar a simulação (vazão e pressão). </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/README.md"><b>README.md</b>:</a> Este arquivo, que fornece uma visão geral do projeto, sua arquitetura, as ferramentas utilizadas e as instruções para a compilação. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>.gitignore</b>:</a> Arquivo de configuração do Git que define quais arquivos e pastas devem ser ignorados (por exemplo, arquivos executáveis e de compilação). </li>
 </ul>
 
 <h4>➔ Bibliotecas utilizadas:</h4> 
@@ -120,15 +119,17 @@
     <li>Diagramação: PlantUML (para a geração do diagrama de classes) </li>
 </ul> 
 
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
 <h2 id="implementacao"> &#128187 IMPLEMENTAÇÃO </h2>
 
 <p>A implementação do projeto seguiu a arquitetura orientada a objetos. Cada classe foi desenvolvida para encapsular uma responsabilidade específica, garantindo que o código fosse modular, reutilizável e de fácil manutenção.</p> 
 
 <ul>
-  <li>A classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Entrada.cpp"><b>Entrada/</b></a>foi implementada para ler os dados do arquivo de forma robusta, gerenciando a vazão fixa ou aleatória. </li>
-  <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a>foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. </li>
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a>foi implementada para simular a interface do usuário, utilizando formatação de texto para representar a saída visual do hidrômetro. </li>
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a>foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
+  <li>A classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Entrada.cpp"><b>Entrada/</b></a> foi implementada para ler os dados do arquivo de forma robusta, gerenciando a vazão fixa ou aleatória. </li>
+  <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a> foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> foi implementada para simular a interface do usuário, utilizando formatação de texto para representar a saída visual do hidrômetro. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
 </ul>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
