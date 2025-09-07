@@ -23,7 +23,6 @@ private:
     double pressao;
     bool vazao_eh_randomica;
 
-    // Atributos para geracao de numeros aleatorios
     std::mt19937 gerador;
     std::uniform_real_distribution<double> distribuicao;
 };

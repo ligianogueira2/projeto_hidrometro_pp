@@ -10,7 +10,7 @@
 class Controladora {
 public:
     Controladora(const std::string& arquivo_config);
-    void executarSimulacao(int duracao_segundos);
+    void executarSimulacao();
     
 private:
     Entrada entrada;

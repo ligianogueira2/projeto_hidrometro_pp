@@ -1,4 +1,4 @@
 # Use -1 para vazao aleatoria
-vazao: 50
-bitola: 50
-pressao: 2
+vazao: 6000
+bitola: 25
+pressao: 2.5
