@@ -1,15 +1,9 @@
-# projeto_hidrometro_pp
-Projeto Hidrômetro - Padrões de Projetos
-
-
-# Projeto Hidrômetro
-Criação de um simulador de hidrômetro em C++ com Abordagem Orientada a Objetos para a disciplina de Padrões de Projetos.
-
-<p align="center"> 
-<a href="" target="_blank"><img src="https://media.istockphoto.com/id/175991302/pt/foto/contador-de-%C3%A1gua-em-conjunto-com-o-n%C3%B3-da-liga%C3%A7%C3%A3o.jpg?s=612x612&w=0&k=20&c=gUF9V2OKBHRQhEMO_Qe908P71uDpUv_HI1bvBAMfM-E="/></a>
-</p>
 <h1 align="center"> Simulador de Hidrômetro </h1>
-<h4 align="center"> Padrões de Projetos - Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a>(Inverno 2023) </h4>
+<p align="center"> 
+<a href="" target="_blank"><img src="https://postimg.cc/k2pHZZ1w"/></a>
+</p>
+<h4 align="center"> Criação de um simulador de hidrômetro em C++ com Abordagem Orientada a Objetos para a disciplina de Padrões de Projetos. </h4>
+<h4 align="center"> Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a>(Setembro 2025) </h4>
 
 <br>
 </br>
