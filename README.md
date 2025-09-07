@@ -1,6 +1,6 @@
 <h1 align="center"> Simulador de Hidrômetro </h1>
 <p align="center"> 
-<img src="images/hidrometro.png" alt="Imagem do Hidrômetro"/>
+<img src="images/hidrometro.jpg" alt="Imagem do Hidrômetro"/>
 </p>
 <h4 align="center"> Criação de um simulador de hidrômetro em C++ com Abordagem Orientada a Objetos para a disciplina de Padrões de Projetos. </h4>
 <h4 align="center"> Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a>(Setembro 2025) </h4>
@@ -65,3 +65,88 @@
   <li> Performance: A simulação deve ser executada em tempo real, com cada iteração do loop principal correspondendo a um segundo de tempo de simulação. </li>
   <li> Usabilidade: A interface do usuário deve ser simples e baseada em texto, com a saída sendo exibida de forma clara no console. </li>
 </ul>
+
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
+<h2 id="uml"> &#127959 Diagrama de Classes (UML)</h2>
+
+<p>A arquitetura do projeto foi modelada usando um diagrama de classes da Linguagem de Modelagem Unificada (UML). Esta representação visual ilustra a estrutura do sistema, mostrando como as classes se relacionam e interagem para simular o hidrômetro.</p>
+
+<p>O diagrama destaca o relacionamento de Composição, onde a classe Controladora atua como a orquestradora central, possuindo e gerenciando instâncias das classes Entrada, Hidrometro e Display para executar a simulação de ponta a ponta</p>
+
+<ul>
+  <li> Entrada: Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
+  <li> Hidrômetro: A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
+  <li> Display: Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
+  <li> Controladora: O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo; </li>
+  <li> Display: Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas.</li>
+</ul>
+
+<p align="center"> 
+<img src="images/uml.png" alt="Imagem da UML"/>
+</p>
+
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
+<h2 id="arquivos"> :floppy_disk: DESCRIÇÃO DOS ARQUIVOS DO PROJETO</h2>
+
+<h4>➔ Arquitetura de diretórios:</h4>
+<ul>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/src"><b>src/</b>:</a>Contém os arquivos de implementação (.cpp) de todas as classes do projeto e a função principal (main), que inicializa a Controladora e inicia a simulação. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/include"><b>include/</b>:</a>Armazena os arquivos de cabeçalho (.h) de todas as classes, que definem a interface (métodos e atributos) do nosso modelo de hidrômetro. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>config/</b>:</a>Contém o arquivo parametros.txt, usado para configurar a simulação (vazão e pressão). </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/README.md"><b>README.md</b>:</a>Este arquivo, que fornece uma visão geral do projeto, sua arquitetura, as ferramentas utilizadas e as instruções para a compilação. </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>.gitignore</b>:</a>Arquivo de configuração do Git que define quais arquivos e pastas devem ser ignorados (por exemplo, arquivos executáveis e de compilação). </li>
+</ul>
+
+<h4>➔ Bibliotecas utilizadas:</h4> 
+<ul>
+  <li>iostream: Biblioteca fundamental para a entrada e saída de dados via console. Foi utilizada para a exibição dos dados do hidrômetro e das mensagens de anomalia; </li>
+  <li>fstream: Essencial para a manipulação de arquivos. Foi usada para ler os parâmetros da simulação a partir do arquivo parametros.txt; </li>
+  <li>string: Fornece funcionalidades para a manipulação de strings, permitindo a leitura e o armazenamento de dados de texto do arquivo de configuração; </li>
+  <li>chrono: Biblioteca para lidar com tempo. Foi utilizada para controlar a duração da simulação, garantindo que o loop de medição seja executado pelo tempo especificado; </li>
+  <li>random: Biblioteca para a geração de números pseudoaleatórios. Foi empregada para simular a vazão de forma aleatória, adicionando um comportamento mais dinâmico e realista ao simulador. </li>
+</ul>
+
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
+<h2 id="ferramentas"> &#128295 PRINCIPAIS FERRAMENTAS UTILIZADAS </h2>
+
+<ul>
+    <li>Linguagem de Programação: C++  </li>
+    <li>Editor de Código: Visual Studio Code (VS Code) </li>
+    <li>Controle de Versão: Git </li>
+    <li>Hospedagem de Código: GitHub </li>
+    <li>Diagramação: PlantUML (para a geração do diagrama de classes) </li>
+</ul> 
+
+<h2 id="implementacao"> &#128187 IMPLEMENTAÇÃO </h2>
+
+<p>A implementação do projeto seguiu a arquitetura orientada a objetos. Cada classe foi desenvolvida para encapsular uma responsabilidade específica, garantindo que o código fosse modular, reutilizável e de fácil manutenção.</p> 
+
+<ul>
+  <li>A classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Entrada.cpp"><b>Entrada/</b></a>foi implementada para ler os dados do arquivo de forma robusta, gerenciando a vazão fixa ou aleatória. </li>
+  <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a>foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a>foi implementada para simular a interface do usuário, utilizando formatação de texto para representar a saída visual do hidrômetro. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a>foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
+</ul>
+
+<a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
+
+<h2 id="testes"> &#128295 TESTES </h2>
+
+<p>A fase de testes foi fundamental para garantir a funcionalidade do software. O processo incluiu: </p> 
+
+<ul>
+    <li><b>Testes de Compilação:</b> Realizados continuamente para identificar e corrigir erros de sintaxe e dependências. </li>
+    <li><b>Testes Funcionais:</b> Executados para validar as funcionalidades-chave, como a leitura correta dos parâmetros, o cálculo preciso do volume de água e a detecção da anomalia de "falta de água" quando a vazão era zero. </li>
+    <li><b>Testes de Integração:</b> A interação entre a Controladora e as outras classes foi testada para assegurar que o fluxo da simulação ocorresse como o esperado. Por exemplo, verificou-se se a Controladora estava passando a vazão correta para o Hidrometro e se o Hidrometro, por sua vez, estava enviando o volume atualizado para o Display em cada ciclo.</li>
+</ul> 
+
+<h2 id="creditos"> :scroll: CRÉDITOS</h2>
+
+<li>Estudante/desenvolvedora</li>
+<p><a href="http://lattes.cnpq.br/2405746986360435">Anna Lígia Alves Nogueira</a></p>
+
+<li>Professor responsável</li>
+<p><a href="http://lattes.cnpq.br/1246085373474860">Katyusco de Farias Santos</a></p>
