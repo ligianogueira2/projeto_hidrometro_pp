@@ -25,7 +25,7 @@
 
 <h2 id="requisitos"> :clipboard: ANÁLISE DE REQUISITOS</h2>
 
-<h4>➔ Requisitos de Funcionalidade:</h4>
+<h4>➔ Requisitos de Funcionalidade</h4>
 <ul>
   » Entrada de Dados (Vazão e Pressão):
   <li> O sistema deve permitir a entrada da vazão de água na faixa de 0 a 100 milímetros por minuto; </li>
@@ -41,16 +41,18 @@
 </ul>
 
 <ul>
-  » Detecção e Tratamento de Anomalias:
-  <li> O sistema deve ser capaz de detectar anomalias no fluxo de água; </li>
-  <li> Em caso de ausência de água (vazão igual a 0), o sistema deve avisar que há passagem de ar pelo cano, registrando um volume simulado de 10% da vazão máxima; </li>
-  <li> A medição de água no fluxo contrário deve ser desconsiderada pelo sistema. </li>
+  » Geração de Imagem (Conceitual na versão 1.0):
+  <li> Uma imagem representativa do hidrômetro deve ser gerada em intervalos configuráveis; </li>
+  <li> Um evento de "geração de imagem" deve ser acionado a cada vez que o valor dos metros cúbicos for alterado, registrando o valor para relatórios ou fins de apresentação; </li>
+  <ul>
+    <li>Na primeira etapa do projeto (versão 1.0), o resultado é exibido apenas no terminal, através da classe Display. </li>
+  </ul> 
 </ul>
 
 <ul>
-  » Geração de Imagem (Conceitual):
-  <li> Uma imagem representativa do hidrômetro deve ser "gerada" em intervalos configuráveis; </li>
-  <li> Um evento de "geração de imagem" deve ser acionado a cada vez que o valor dos metros cúbicos for alterado, registrando o valor para relatórios ou fins de apresentação; </li>
+  » Detecção e Tratamento de Anomalias:
+  <li> O sistema deve ser capaz de detectar anomalias no fluxo de água; </li>
+  <li> Em caso de ausência de água (vazão igual a 0), o sistema deve avisar que há passagem de ar pelo cano, registrando um volume simulado de 10% da vazão máxima; </li>
   <li> A medição de água no fluxo contrário deve ser desconsiderada pelo sistema. </li>
 </ul>
 
@@ -72,12 +74,12 @@
 
 <p>A arquitetura do projeto foi modelada usando um diagrama de classes da Linguagem de Modelagem Unificada (UML). Esta representação visual ilustra a estrutura do sistema, mostrando como as classes se relacionam e interagem para simular o hidrômetro.</p>
 
-<p>O diagrama destaca o relacionamento de Composição, onde a classe Controladora atua como a orquestradora central, possuindo e gerenciando instâncias das classes Entrada, Hidrometro e Display para executar a simulação de ponta a ponta</p>
+<p>O diagrama destaca o relacionamento de Composição, onde a classe Controladora atua como a orquestradora central, possuindo e gerenciando instâncias das classes Entrada, Hidrometro e Display para executar a simulação de ponta a ponta. </p>
 
 <ul>
   <li> <b>Entrada:</b> Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
   <li> <b>Hidrômetro:</b> A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
-  <li> <b>Display::</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
+  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas - será a imagem gerada posteriormente; </li>
   <li> <b>Controladora:</b> O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
 </ul>
 
@@ -131,7 +133,7 @@
     <li>Valor Fixo e Normal (ex: 50): O programa lê um número positivo do arquivo e usa esse valor constante para a vazão durante toda a simulação. </li>
     <li>Valor Aleatório (ex: -1): Quando o programa lê -1 no arquivo para o parâmetro de vazão, ele entende que deve gerar um valor aleatório dentro de uma faixa predefinida (por exemplo, entre 0 e 100). </li>
     <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano" que você implementou. </li>
-</ul> 
+  </ul> 
   <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a> foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. </li>
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> foi implementada para simular a interface do usuário, utilizando formatação de texto, na primeira versão do projeto, para representar a saída visual do hidrômetro. Em próximas etapas, o display será a base da imagem. </li>
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
