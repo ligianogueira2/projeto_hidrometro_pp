@@ -141,7 +141,9 @@
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
 
-<h2 id="testes"> &#129514 TESTES </h2>
+<h2 id="testes"> &#129514 TESTES E OUTPUT </h2>
+
+<h4>➔ Testes </h4>
 
 <p>A fase de testes foi fundamental para garantir a funcionalidade do software. O processo incluiu: </p> 
 
@@ -150,6 +152,15 @@
     <li><b>Testes Funcionais:</b> Executados para validar as funcionalidades-chave, como a leitura correta dos parâmetros, o cálculo preciso do volume de água e a detecção da anomalia de "falta de água" quando a vazão era zero. </li>
     <li><b>Testes de Integração:</b> A interação entre a Controladora e as outras classes foi testada para assegurar que o fluxo da simulação ocorresse como o esperado. Por exemplo, verificou-se se a Controladora estava passando a vazão correta para o Hidrometro e se o Hidrometro, por sua vez, estava enviando o volume atualizado para o Display em cada ciclo.</li>
 </ul> 
+
+
+<h4>➔ Output (saída do programa) </h4>
+
+<p>Por fim, a captura abaixo representa o output atual do projeto (versão 1.0). O requisito final é que essa formatação seja transferida para uma imagem que simule o display de um hidrômetro real. </p> 
+
+<p align="center"> 
+<img src="images/output.png" alt="Imagem do output"/>
+</p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
 
