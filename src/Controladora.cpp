@@ -3,13 +3,11 @@
 #include <windows.h>
 #include <chrono>
 #include <iomanip>
-#include <csignal> // Inclua esta biblioteca
-#include <atomic>  // Inclua esta biblioteca
+#include <csignal> 
+#include <atomic>  
 
-// Variavel global para o sinal, visivel apenas neste arquivo
 static std::atomic<bool> g_executar_simulacao{true};
 
-// Funcao que sera chamada quando o Ctrl + C for pressionado
 void sinal_handler(int sinal) {
     if (sinal == SIGINT) {
         std::cout << "\nSinal de interrupcao (Ctrl + C) recebido. Finalizando..." << std::endl;
@@ -47,11 +45,9 @@ void Controladora::executarSimulacao() {
             ultimo_m3_inteiro = current_m3_inteiro;
         }
 
-        // Aguarda 1 segundo antes do proximo ciclo
         Sleep(1000);
     }
     
-    // Mostra a contagem final apos o loop ser interrompido
     std::cout << "\nSimulacao finalizada." << std::endl;
     std::cout << "--------------------------------------------------------------" << std::endl;
     std::cout << "Leitura Final do Hidrometro: " << std::fixed << std::setprecision(2) 
