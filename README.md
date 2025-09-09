@@ -12,7 +12,7 @@
 </p>
 
 <div align="center">
-<h4> | <a href="#contexto">Contexto e objetivo</a> | <a href="#requisitos">Análise de requisitos</a> | <a href="#uml">Diagrama de Classes (UML)</a> | <a href="#arquivos">Descrição dos arquivos</a> | <a href="#ferramentas">Ferramentas</a> | <a href="#implementacao">Implementação</a> | <a href="#testes">Testes</a> | <a href="#creditos">Créditos</a> |</h4>
+<h4> | <a href="#contexto">Contexto e objetivo</a> | <a href="#requisitos">Análise de requisitos</a> | <a href="#uml">Diagrama de Classes (UML)</a> | <a href="#arquivos">Descrição dos arquivos</a> | <a href="#ferramentas">Ferramentas</a> | <a href="#implementacao">Implementação</a> | <a href="#testes">Testes e output </a> | <a href="#creditos">Créditos</a> |</h4>
 </div>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
@@ -135,7 +135,7 @@
     <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano" que você implementou. </li>
   </ul> 
 
-  <p align="center"> __________________________________ </p>
+  <p align="center"> __________________________________________________ </p>
 
   <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a> foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. Ele armazena internamente o volume total de água em litros e em metros cúbicos (m³). Sua principal responsabilidade é o método medir, que recebe a vazão e o tempo decorrido para atualizar o volume total. A fórmula de cálculo é a seguinte:
 
@@ -150,12 +150,12 @@
     <li>1000: Constante para converter litros em metros cúbicos. </li>
   </ul> 
 
-  <p align="center"> __________________________________ </p>
+  <p align="center"> __________________________________________________ </p>
 
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> foi implementada para simular a interface do usuário, utilizando formatação de texto, na primeira versão do projeto, para representar a saída visual do hidrômetro. Em próximas etapas, o display será a base da imagem. </li>
   
-  <p align="center"> __________________________________ </p>
-  
+  <p align="center"> __________________________________________________ </p>
+
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
 </ul>
 
