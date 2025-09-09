@@ -134,7 +134,20 @@
     <li>Valor Aleatório (ex: -1): Quando o programa lê -1 no arquivo para o parâmetro de vazão, ele entende que deve gerar um valor aleatório dentro de uma faixa predefinida (por exemplo, entre 0 e 100). </li>
     <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano" que você implementou. </li>
   </ul> 
-  <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a> foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. </li>
+
+  <li>O <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Hidrometro.cpp"><b>Hidrômetro/</b></a> foi codificado com a lógica de acúmulo de volume, isolando os cálculos de medição. Ele armazena internamente o volume total de água em litros e em metros cúbicos (m³). Sua principal responsabilidade é o método medir, que recebe a vazão e o tempo decorrido para atualizar o volume total. A fórmula de cálculo é a seguinte:
+
+  <p> align="center"> Volume_m3 = (Vazao_L_min * Tempo_s) / (60 * 1000) </p>
+
+  <p> Onde: </p>
+
+<ul>
+    <li>Vazão_L_min: O fluxo de água em litros por minuto (L/min) fornecido pela classe Entrada. </li>
+    <li>Tempo_s: O tempo decorrido em segundos (s) desde a última medição. A Controladora chama o medir a cada segundo. </li>
+    <li>60: Constante para converter minutos em segundos. </li>
+    <li>1000: Constante para converter litros em metros cúbicos. </li>
+  </ul> 
+
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> foi implementada para simular a interface do usuário, utilizando formatação de texto, na primeira versão do projeto, para representar a saída visual do hidrômetro. Em próximas etapas, o display será a base da imagem. </li>
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
 </ul>
@@ -158,7 +171,7 @@
 
 <p>Por fim, a captura abaixo representa o output atual do projeto (versão 1.0). O requisito final é que essa formatação seja transferida para uma imagem que simule o display de um hidrômetro real. </p> 
 
-<p align="center"> 
+<p> align="center"> 
 <img src="images/output.png" alt="Imagem do output"/>
 </p>
 
