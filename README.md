@@ -12,7 +12,7 @@
 </p>
 
 <div align="center">
-<h4> | <a href="#contexto">Contexto e objetivo</a> | <a href="#requisitos">Análise de requisitos</a> | <a href="#uml">Diagrama de Classes (UML)</a> | <a href="#arquivos">Descrição dos arquivos</a> | <a href="#ferramentas">Ferramentas</a> | <a href="#implementacao">Implementação</a> | <a href="#testes">Testes e output </a> | <a href="#creditos">Créditos</a> |</h4>
+<h4> | <a href="#contexto">Contexto e objetivo</a> | <a href="#requisitos">Análise de requisitos</a> | <a href="#uml">Diagrama de classes (UML)</a> | <a href="#arquivos">Descrição dos arquivos</a> | <a href="#ferramentas">Ferramentas</a> | <a href="#implementacao">Implementação</a> | <a href="#testes">Testes e output </a> | <a href="#creditos">Créditos</a> |</h4>
 </div>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
@@ -41,11 +41,11 @@
 </ul>
 
 <ul>
-  » Geração de Imagem (Conceitual na versão 1.0):
+  » Geração de Imagem (finalizada na versão 2.0):
   <li> Uma imagem representativa do hidrômetro deve ser gerada em intervalos configuráveis; </li>
   <li> Um evento de "geração de imagem" deve ser acionado a cada vez que o valor dos metros cúbicos for alterado, registrando o valor para relatórios ou fins de apresentação; </li>
   <ul>
-    <li>Na primeira etapa do projeto (versão 1.0), o resultado é exibido apenas no terminal, através da classe Display. </li>
+    <li>Na primeira etapa do projeto (versão 1.0), o resultado foi exibido apenas no terminal, através da classe Display. </li>
   </ul> 
 </ul>
 
@@ -63,7 +63,7 @@
 
 <h4>➔ Requisitos Não Funcionais</h4>
 <ul>
-  <li> Portabilidade: O software deve ser compilável e executável em diferentes sistemas operacionais (Windows, Linux, macOS); </li>
+  <li> Portabilidade: O software deve ser compilável e executável; </li>
   <li> Performance: A simulação deve ser executada em tempo real, com cada iteração do loop principal correspondendo a um segundo de tempo de simulação; </li>
   <li> Usabilidade: A interface do usuário deve ser simples e baseada em texto, com a saída sendo exibida de forma clara no console. </li>
 </ul>
@@ -79,7 +79,7 @@
 <ul>
   <li> <b>Entrada:</b> Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
   <li> <b>Hidrômetro:</b> A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
-  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas - será a imagem gerada posteriormente; </li>
+  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
   <li> <b>Controladora:</b> O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
 </ul>
 
@@ -102,11 +102,15 @@
 
 <h4>➔ Bibliotecas utilizadas:</h4> 
 <ul>
-  <li>iostream: Biblioteca fundamental para a entrada e saída de dados via console. Foi utilizada para a exibição dos dados do hidrômetro e das mensagens de anomalia; </li>
-  <li>fstream: Essencial para a manipulação de arquivos. Foi usada para ler os parâmetros da simulação a partir do arquivo parametros.txt; </li>
-  <li>string: Fornece funcionalidades para a manipulação de strings, permitindo a leitura e o armazenamento de dados de texto do arquivo de configuração; </li>
-  <li>chrono: Biblioteca para lidar com tempo. Foi utilizada para controlar a duração da simulação, garantindo que o loop de medição seja executado pelo tempo especificado; </li>
-  <li>random: Biblioteca para a geração de números pseudoaleatórios. Foi empregada para simular a vazão de forma aleatória, adicionando um comportamento mais dinâmico e realista ao simulador. </li>
+  <li>iostream e cstdio: Essas bibliotecas foram usadas para a manipulação de entrada e saída de dados. Enquanto iostream é utilizada para a exibição de mensagens no console, cstdio é essencial para o uso de funções de formatação de strings, como sprintf; </li>
+  <li>windows.h: Uma biblioteca específica do sistema operacional Windows, necessária para utilizar funções como Sleep(), que permite pausar a simulação por um tempo determinado; </li>
+  <li>chrono: Essencial para lidar com tempo, garantindo a medição precisa dos intervalos da simulação; </li>
+  <li>iomanip: Usada para formatar a saída no console, permitindo um controle preciso, como a definição de casas decimais para exibir os valores do hidrômetro; </li>
+  <li>csignal: Uma biblioteca padrão do C++ que permite o tratamento de sinais do sistema, como o comando Ctrl + C para finalizar a execução da simulação de forma controlada; </li>
+  <li>atomic: Utilizada para criar variáveis que podem ser acessadas de forma segura por diferentes partes do programa, como o sinalizador g_executar_simulacao, garantindo que o programa seja encerrado corretamente; </li>
+  <li>vector: Fornece a funcionalidade de arrays dinâmicos, usada para armazenar a configuração dos segmentos de cada dígito do display; </li>
+  <li>vcstring: Usada para funções que manipulam C-strings, como strlen, para obter o tamanho da string de texto do display; </li>
+  <li>stb_image.h e stb_image_write.h: Essas bibliotecas de terceiros, conhecidas por sua simplicidade, foram integradas ao projeto para o carregamento da imagem base do hidrômetro e para a criação e salvamento das novas imagens com as leituras atualizadas. </li>
 </ul>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
@@ -130,8 +134,8 @@
 <ul>
   <li>A classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Entrada.cpp"><b>Entrada/</b></a> foi implementada para ler os dados do arquivo, gerenciando a vazão fixa ou aleatória. </li>
   <ul>
-    <li>Valor Fixo e Normal (ex: 50): O programa lê um número positivo do arquivo e usa esse valor constante para a vazão durante toda a simulação. </li>
-    <li>Valor Aleatório (ex: -1): Quando o programa lê -1 no arquivo para o parâmetro de vazão, ele entende que deve gerar um valor aleatório dentro de uma faixa predefinida (por exemplo, entre 0 e 100). </li>
+    <li>Valor Fixo e Normal (ex: 50): O programa lê um número positivo do arquivo e usa esse valor constante para a vazão durante toda a simulação; </li>
+    <li>Valor Aleatório (ex: -1): Quando o programa lê -1 no arquivo para o parâmetro de vazão, ele entende que deve gerar um valor aleatório dentro de uma faixa predefinida (por exemplo, entre 0 e 100); </li>
     <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano" que você implementou. </li>
   </ul> 
 
@@ -144,20 +148,42 @@
   <p> Onde: </p>
 
 <ul>
-    <li>Vazão_L_min: O fluxo de água em litros por minuto (L/min) fornecido pela classe Entrada. </li>
-    <li>Tempo_s: O tempo decorrido em segundos (s) desde a última medição. A Controladora chama o medir a cada segundo. </li>
-    <li>60: Constante para converter minutos em segundos. </li>
+    <li>Vazão_L_min: O fluxo de água em litros por minuto (L/min) fornecido pela classe Entrada; </li>
+    <li>Tempo_s: O tempo decorrido em segundos (s) desde a última medição. A Controladora chama o medir a cada segundo; </li>
+    <li>60: Constante para converter minutos em segundos; </li>
     <li>1000: Constante para converter litros em metros cúbicos. </li>
   </ul> 
 
   <p align="center"> __________________________________________________ </p>
 
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> foi implementada para simular a interface do usuário, utilizando formatação de texto, na primeira versão do projeto, para representar a saída visual do hidrômetro. Em próximas etapas, o display será a base da imagem. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> lida com a parte visual do projeto. Ela carrega uma imagem de fundo (hidrometro.png) e desenha os dígitos da leitura de forma programática. </li>
+
+  <p> Funções Principais: </p>
+
+<ul>
+    <li>mostrarMedicao(double volume_m3, double volume_litros, double pressao_kpa): Esta é a função central. Ela recebe o volume total em metros cúbicos (volume_m3) e converte o valor para uma representação em string. A lógica principal aqui é a separação da parte inteira e da parte decimal do volume para garantir que os dígitos decimais sejam exibidos corretamente, mesmo com valores pequenos. A função então usa desenhar_digito para renderizar o número na imagem do hidrômetro; </li>
+    <li>desenhar_digito(unsigned char* dados, ...): Esta função desenha um único dígito de 7 segmentos na imagem. Ela recebe o caractere do dígito ('0' a '9') e as coordenadas, e determina quais segmentos do display devem ser ativados (true); </li>
+    <li>desenhar_retangulo(unsigned char* dados, ...): Uma função utilitária para desenhar os retângulos que formam os segmentos dos dígitos. </li>
+  </ul> 
+
+  <p> Lógica de Visualização: </p>
+
+<ul>
+    <li>Calcula a parte inteira (int inteiros = static_cast<int>(volume_m3);) </li>
+    <li>Calcula a parte decimal, multiplicando a diferença por 100 (int decimais = static_cast<int>((volume_m3 - inteiros) * 100);) </li>
+    <li>Formata ambas as partes em strings com preenchimento de zeros (%06d para os inteiros e %02d para os decimais) </li>
+    <li>4.	Concatena as duas strings para formar o número completo, permitindo que os dígitos da parte decimal sejam exibidos em vermelho separadamente </li>
+  </ul> 
   
   <p align="center"> __________________________________________________ </p>
 
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> foi o ponto central de implementação, onde a simulação é orquestrada, interligando todas as outras partes do sistema. </li>
-</ul>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> é o "cérebro" da simulação. Ela cria uma instância do hidrômetro e do display, e executa um loop contínuo para simular o fluxo de água ao longo do tempo. </li>
+
+<p> Função Principal: </p>
+
+<ul>
+    <li>executarSimulacao(): Esta é a função de entrada do programa. Ela inicia um loop infinito que, a cada segundo, atualiza a medição do hidrômetro. A simulação só é interrompida quando o usuário pressiona Ctrl + C, graças ao signal_handler. A cada vez que a parte inteira do volume em m³ muda, a função mostrarMedicao do display é chamada para gerar uma nova imagem </li>
+  </ul> 
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
 
@@ -176,10 +202,24 @@
 
 <h4>➔ Output (saída do programa) </h4>
 
-<p>Por fim, a captura abaixo representa o output atual do projeto (versão 1.0). O requisito final é que essa formatação seja transferida para uma imagem que simule o display de um hidrômetro real. </p> 
+<ul>
+    <li>Versão 1.0: </li>
+  </ul> 
+
+<p>A captura abaixo representa o output inicial do projeto, onde o display era exibido apenas no terminal. </p> 
 
 <p align="center"> 
 <img src="images/output.png" alt="Imagem do output"/>
+</p>
+
+<ul>
+    <li>Versão 2.0: </li>
+  </ul> 
+
+<p>Abaixo, está a imagem gerada após a execução do código, simulando o display de um hidrômetro real.  </p> 
+
+<p align="center">
+<img src="hidrometro_final_0.02.png" alt="Imagem final do hidrômetro"/>
 </p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
