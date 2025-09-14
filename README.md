@@ -3,7 +3,7 @@
 <img src="images/foto_hidrometro.jpg" alt="Imagem do Hidrômetro"/>
 </p>
 <h4 align="center"> Criação de um simulador de hidrômetro em C++ com Abordagem Orientada a Objetos para a disciplina de Padrões de Projetos. </h4>
-<h4 align="center"> Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a>(Setembro 2025) </h4>
+<h4 align="center"> Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a> (Setembro 2025) </h4>
 
 <br>
 </br>
@@ -97,7 +97,7 @@
     <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/include"><b>include/</b>:</a> Armazena os arquivos de cabeçalho (.h) de todas as classes, que definem a interface (métodos e atributos) do modelo de hidrômetro; </li>
     <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>config/</b>:</a> Contém o arquivo parametros.txt, usado para configurar a simulação (vazão e pressão); </li>
     <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/images"><b>images</b>:</a> Contém as imagens utilizadas no projeto; </li>
-    <li><a href=""><b>medicoes</b>:</a> Contém o diretório responsável por armanezar as imagens do hidrômetro geradas pelo programa; </li>
+    <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/tree/main/Medicoes_202311250003"><b>medicoes</b>:</a> Contém o diretório responsável por armanezar as imagens do hidrômetro geradas pelo programa (solicitado que o nome fosse "medições + número da matrícula"); </li>
     <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/README.md"><b>README.md</b>:</a> Este arquivo, que fornece uma visão geral do projeto, sua arquitetura, as ferramentas utilizadas e as instruções para a compilação; </li>
     <li><a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/.gitignore"><b>.gitignore</b>:</a> Arquivo de configuração do Git que define quais arquivos e pastas devem ser ignorados (por exemplo, arquivos executáveis e de compilação). </li>
 </ul>
