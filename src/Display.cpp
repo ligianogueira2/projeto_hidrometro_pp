@@ -87,7 +87,7 @@ void Display::mostrarMedicao(double volume_m3, double volume_litros, double pres
     }
 
     char nome[100];
-    sprintf(nome, "images/hidrometro_final_%.2f.png", volume_m3);
+    sprintf(nome, "Medicoes_202311250003/hidrometro_final_%.2f.png", volume_m3);
     if (stbi_write_png(nome, largura, altura, 3, img, largura*3)) {
         std::cout << ">>> Imagem PNG gerada: " << nome << " <<<\n";
     } else {
