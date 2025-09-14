@@ -79,7 +79,7 @@
 <ul>
   <li> <b>Entrada:</b> Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
   <li> <b>Hidrômetro:</b> A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
-  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição no console, simulando o mostrador de um hidrômetro real, com cores e formatação específicas; </li>
+  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição em uma imagem com cores e formatação específicas, simulando o mostrador de um hidrômetro real; </li>
   <li> <b>Controladora:</b> O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
 </ul>
 
