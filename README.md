@@ -219,7 +219,7 @@
 <p>Abaixo, está a imagem gerada após a execução do código, simulando o display de um hidrômetro real.  </p> 
 
 <p align="center">
-<img src="foto_hidrometro_final" alt="Imagem final do hidrômetro"/>
+<img src="images\foto_hidrometro_final.png" alt="Imagem final do hidrômetro"/>
 </p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
