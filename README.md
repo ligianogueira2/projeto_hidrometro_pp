@@ -1,6 +1,6 @@
 <h1 align="center"> Simulador de Hidrômetro </h1>
 <p align="center"> 
-<img src="images/hidrometro.jpg" alt="Imagem do Hidrômetro"/>
+<img src="images/foto_hidrometro.jpg" alt="Imagem do Hidrômetro"/>
 </p>
 <h4 align="center"> Criação de um simulador de hidrômetro em C++ com Abordagem Orientada a Objetos para a disciplina de Padrões de Projetos. </h4>
 <h4 align="center"> Engenharia de Computação/<a href="https://www.ifpb.edu.br/">IFPB</a>(Setembro 2025) </h4>
@@ -136,7 +136,7 @@
   <ul>
     <li>Valor Fixo e Normal (ex: 50): O programa lê um número positivo do arquivo e usa esse valor constante para a vazão durante toda a simulação; </li>
     <li>Valor Aleatório (ex: -1): Quando o programa lê -1 no arquivo para o parâmetro de vazão, ele entende que deve gerar um valor aleatório dentro de uma faixa predefinida (por exemplo, entre 0 e 100); </li>
-    <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano" que você implementou. </li>
+    <li>Valor zero (ex: 0): O programa lê 0 e isso simula um cenário de "falta de água", ativando a anomalia de "passagem de ar no cano". </li>
   </ul> 
 
   <p align="center"> __________________________________________________ </p>
@@ -158,7 +158,9 @@
 
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> lida com a parte visual do projeto. Ela carrega uma imagem de fundo (hidrometro.png) e desenha os dígitos da leitura de forma programática. </li>
 
+<ul>
   <p> Funções Principais: </p>
+  </ul> 
 
 <ul>
     <li>mostrarMedicao(double volume_m3, double volume_litros, double pressao_kpa): Esta é a função central. Ela recebe o volume total em metros cúbicos (volume_m3) e converte o valor para uma representação em string. A lógica principal aqui é a separação da parte inteira e da parte decimal do volume para garantir que os dígitos decimais sejam exibidos corretamente, mesmo com valores pequenos. A função então usa desenhar_digito para renderizar o número na imagem do hidrômetro; </li>
@@ -166,23 +168,27 @@
     <li>desenhar_retangulo(unsigned char* dados, ...): Uma função utilitária para desenhar os retângulos que formam os segmentos dos dígitos. </li>
   </ul> 
 
+<ul>
   <p> Lógica de Visualização: </p>
+  </ul> 
 
 <ul>
-    <li>Calcula a parte inteira (int inteiros = static_cast<int>(volume_m3);) </li>
-    <li>Calcula a parte decimal, multiplicando a diferença por 100 (int decimais = static_cast<int>((volume_m3 - inteiros) * 100);) </li>
-    <li>Formata ambas as partes em strings com preenchimento de zeros (%06d para os inteiros e %02d para os decimais) </li>
-    <li>4.	Concatena as duas strings para formar o número completo, permitindo que os dígitos da parte decimal sejam exibidos em vermelho separadamente </li>
+    <li>Calcula a parte inteira (int inteiros = static_cast<int>(volume_m3);); </li>
+    <li>Calcula a parte decimal, multiplicando a diferença por 100 (int decimais = static_cast<int>((volume_m3 - inteiros) * 100);); </li>
+    <li>Formata ambas as partes em strings com preenchimento de zeros (%06d para os inteiros e %02d para os decimais); </li>
+    <li>Concatena as duas strings para formar o número completo, permitindo que os dígitos da parte decimal sejam exibidos em vermelho separadamente. </li>
   </ul> 
   
   <p align="center"> __________________________________________________ </p>
 
   <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> é o "cérebro" da simulação. Ela cria uma instância do hidrômetro e do display, e executa um loop contínuo para simular o fluxo de água ao longo do tempo. </li>
 
-<p> Função Principal: </p>
+<ul>
+  <p> Função Principal: </p>
+  </ul> 
 
 <ul>
-    <li>executarSimulacao(): Esta é a função de entrada do programa. Ela inicia um loop infinito que, a cada segundo, atualiza a medição do hidrômetro. A simulação só é interrompida quando o usuário pressiona Ctrl + C, graças ao signal_handler. A cada vez que a parte inteira do volume em m³ muda, a função mostrarMedicao do display é chamada para gerar uma nova imagem </li>
+    <li>executarSimulacao(): Esta é a função de entrada do programa. Ela inicia um loop infinito que, a cada segundo, atualiza a medição do hidrômetro. A simulação só é interrompida quando o usuário pressiona Ctrl + C, graças ao signal_handler. A cada vez que a parte inteira do volume em m³ muda, a função mostrarMedicao do display é chamada para gerar uma nova imagem. </li>
   </ul> 
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
@@ -194,8 +200,8 @@
 <p>A fase de testes foi fundamental para garantir a funcionalidade do software. O processo incluiu: </p> 
 
 <ul>
-    <li><b>Testes de Compilação:</b> Realizados continuamente para identificar e corrigir erros de sintaxe e dependências. </li>
-    <li><b>Testes Funcionais:</b> Executados para validar as funcionalidades-chave, como a leitura correta dos parâmetros, o cálculo preciso do volume de água e a detecção da anomalia de "falta de água" quando a vazão era zero. </li>
+    <li><b>Testes de Compilação:</b> Realizados continuamente para identificar e corrigir erros de sintaxe e dependências; </li>
+    <li><b>Testes Funcionais:</b> Executados para validar as funcionalidades-chave, como a leitura correta dos parâmetros, o cálculo preciso do volume de água e a detecção da anomalia de "falta de água" quando a vazão era zero; </li>
     <li><b>Testes de Integração:</b> A interação entre a Controladora e as outras classes foi testada para assegurar que o fluxo da simulação ocorresse como o esperado. Por exemplo, verificou-se se a Controladora estava passando a vazão correta para o Hidrometro e se o Hidrometro, por sua vez, estava enviando o volume atualizado para o Display em cada ciclo.</li>
 </ul> 
 
