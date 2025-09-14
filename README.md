@@ -156,21 +156,17 @@
 
   <p align="center"> __________________________________________________ </p>
 
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> lida com a parte visual do projeto. Ela carrega uma imagem de fundo (hidrometro.png) e desenha os dígitos da leitura de forma programática. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Display.cpp"><b>Display/</b></a> lida com a parte visual do projeto. Ela carrega uma imagem de fundo (hidrometro.png) e desenha os dígitos da leitura de forma programática. </li> <br>
 
-<ul>
   <p> Funções Principais: </p>
-  </ul> 
 
 <ul>
     <li>mostrarMedicao(double volume_m3, double volume_litros, double pressao_kpa): Esta é a função central. Ela recebe o volume total em metros cúbicos (volume_m3) e converte o valor para uma representação em string. A lógica principal aqui é a separação da parte inteira e da parte decimal do volume para garantir que os dígitos decimais sejam exibidos corretamente, mesmo com valores pequenos. A função então usa desenhar_digito para renderizar o número na imagem do hidrômetro; </li>
     <li>desenhar_digito(unsigned char* dados, ...): Esta função desenha um único dígito de 7 segmentos na imagem. Ela recebe o caractere do dígito ('0' a '9') e as coordenadas, e determina quais segmentos do display devem ser ativados (true); </li>
     <li>desenhar_retangulo(unsigned char* dados, ...): Uma função utilitária para desenhar os retângulos que formam os segmentos dos dígitos. </li>
-  </ul> 
+  </ul> <br>
 
-<ul>
   <p> Lógica de Visualização: </p>
-  </ul> 
 
 <ul>
     <li>Calcula a parte inteira (int inteiros = static_cast<int>(volume_m3);); </li>
@@ -181,11 +177,9 @@
   
   <p align="center"> __________________________________________________ </p>
 
-  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> é o "cérebro" da simulação. Ela cria uma instância do hidrômetro e do display, e executa um loop contínuo para simular o fluxo de água ao longo do tempo. </li>
+  <li>A Classe <a href="https://github.com/ligianogueira2/projeto_hidrometro_pp/blob/main/src/Controladora.cpp"><b>Controladora/</b></a> é o "cérebro" da simulação. Ela cria uma instância do hidrômetro e do display, e executa um loop contínuo para simular o fluxo de água ao longo do tempo. </li> <br>
 
-<ul>
   <p> Função Principal: </p>
-  </ul> 
 
 <ul>
     <li>executarSimulacao(): Esta é a função de entrada do programa. Ela inicia um loop infinito que, a cada segundo, atualiza a medição do hidrômetro. A simulação só é interrompida quando o usuário pressiona Ctrl + C, graças ao signal_handler. A cada vez que a parte inteira do volume em m³ muda, a função mostrarMedicao do display é chamada para gerar uma nova imagem. </li>
@@ -225,7 +219,7 @@
 <p>Abaixo, está a imagem gerada após a execução do código, simulando o display de um hidrômetro real.  </p> 
 
 <p align="center">
-<img src="hidrometro_final_0.02.png" alt="Imagem final do hidrômetro"/>
+<img src="foto_hidrometro_final" alt="Imagem final do hidrômetro"/>
 </p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
