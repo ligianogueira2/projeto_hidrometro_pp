@@ -84,15 +84,15 @@
 </ul>
 
 <ul>
-    <li>UML versão 1.0: </li>
+  <h4>➔ UML versão 1.0: </h4> 
   </ul> 
 
 <p align="center"> 
-<https://drive.google.com/drive/u/2/folders/13VzkY8oS-7Ptex5CROcKNnJKO1PNU8Cb/>
+<img src="images/uml.png" alt="Imagem da UML v1"/>
 </p>
 
 <ul>
-    <li>UML versão 2.0: </li>
+  <h4>➔ UML versão 2.0: </h4> 
   </ul> 
 
 <p align="center"> 
@@ -104,7 +104,7 @@
   </ul> 
 
 <p align="center"> 
-<img src="images/uml_2_versao.png" alt="Imagem da UML v2"/>
+<https://drive.google.com/drive/u/2/folders/13VzkY8oS-7Ptex5CROcKNnJKO1PNU8Cb/>
 </p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
