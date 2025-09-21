@@ -77,14 +77,34 @@
 <p>O diagrama destaca o relacionamento de Composição, onde a classe Controladora atua como a orquestradora central, possuindo e gerenciando instâncias das classes Entrada, Hidrometro e Display para executar a simulação de ponta a ponta. </p>
 
 <ul>
-  <li> <b>Entrada:</b> Responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios; </li>
-  <li> <b>Hidrômetro:</b> A classe principal de medição. Ela mantém o registro do volume de água total e calcula o volume adicionado a cada intervalo de tempo; </li>
-  <li> <b>Display:</b> Responsável pela parte visual. Ela formata e exibe os dados de medição em uma imagem com cores e formatação específicas, simulando o mostrador de um hidrômetro real; </li>
-  <li> <b>Controladora:</b> O "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
+  <li> <b>Entrada:</b> responsável por ler os parâmetros de configuração de um arquivo de texto (parametros.txt). Ela gerencia a vazão e a pressão, podendo fornecer valores fixos ou aleatórios e, assim, modela a dinâmica de fornecimento de água do sistema; </li>
+  <li> <b>Hidrômetro:</b> é a classe principal de medição. Ela mantém o registro do volume de água total e calcular o incremento de volume a cada ciclo de simulação; </li>
+  <li> <b>Display:</b> responsável pela parte visual. Ela formata e exibe os dados de medição em uma imagem com cores e formatação específicas, simulando o mostrador de um hidrômetro real; </li>
+  <li> <b>Controladora:</b> é o "maestro" do sistema. É a Controladora que cria e gerencia as instâncias de Entrada, Hidrometro e Display. Ela executa o loop principal da simulação, obtendo dados e atualizando o estado do hidrômetro a cada segundo. </li>
 </ul>
 
+<ul>
+    <li>UML versão 1.0: </li>
+  </ul> 
+
 <p align="center"> 
-<img src="images/uml.png" alt="Imagem da UML"/>
+<https://drive.google.com/drive/u/2/folders/13VzkY8oS-7Ptex5CROcKNnJKO1PNU8Cb/>
+</p>
+
+<ul>
+    <li>UML versão 2.0: </li>
+  </ul> 
+
+<p align="center"> 
+<img src="images/uml_2_versao.png" alt="Imagem da UML v2"/>
+</p>
+
+<ul>
+    <li>Link de PDF com a UML 2.0: </li>
+  </ul> 
+
+<p align="center"> 
+<img src="images/uml_2_versao.png" alt="Imagem da UML v2"/>
 </p>
 
 <a href="https://imgbox.com/3tZuCnVg" target="_blank"><img src="https://images2.imgbox.com/42/88/3tZuCnVg_o.png" alt="image host" height="5px" width="900px"/></a>
